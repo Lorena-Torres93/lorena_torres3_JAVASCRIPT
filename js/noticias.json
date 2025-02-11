@@ -1,0 +1,19 @@
+{
+    "noticias": [
+        {
+            "titulo": "Nuevo Proyecto Web Lanzado",
+            "descripcion": "Hemos lanzado un nuevo proyecto web con las últimas tecnologías en desarrollo web.",
+            "enlace": "https://www.idento.es/blog/desarrollo-web/"
+        },
+        {
+            "titulo": "Actualización de Portfolio",
+            "descripcion": "Se han agregado nuevos proyectos al portfolio, revisa las últimas creaciones.",
+            "enlace": "https://www.idento.es/blog/desarrollo-web/"
+        },
+        {
+            "titulo": "Consejos para Mejorar tu Código JavaScript",
+            "descripcion": "Descubre algunas prácticas recomendadas para escribir un código más limpio y eficiente.",
+            "enlace": "https://www.idento.es/blog/desarrollo-web/"
+        }
+    ]
+}

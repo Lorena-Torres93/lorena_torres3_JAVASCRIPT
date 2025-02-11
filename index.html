@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de un desarrollador web especializado en JavaScript, HTML5 y CSS3. Explora mis proyectos y contáctame para más información.">
+    <meta name="keywords" content="desarrollador web, JavaScript, HTML5, CSS3, portfolio, proyectos web">
+    <meta name="author" content="Torres">    
+    <title>Portfolio de Programador Web</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/script.js" defer></script>
+</head> 
+<body>
+    <header>
+        <nav aria-label="Menú principal">
+            <div class="nav-container">
+                <div class="logo">
+                        <img src="./images/logolorenatorres.jpg" alt="Logo de la empresa">
+                   <h1>Mi Portfolio</h1>
+                </div>
+                <ul role="menu">
+                    <li role="menuitem"><a href="index.html">Inicio</a></li>
+                    <li role="menuitem"><a href="./views/galeria.html">Galería</a></li>
+                    <li role="menuitem"><a href="./views/presupuesto.html">Presupuesto</a></li>
+                    <li role="menuitem"><a href="./views/contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    
+    <main>
+        <section id="presentacion">
+            <div class="contenido-presentacion">
+                <h1>Bienvenido a mi portfolio</h1>
+                <p>
+                    Soy un apasionado del desarrollo web con experiencia en <strong>JavaScript, HTML5 y CSS3</strong>.  
+                    Transformo ideas en soluciones digitales atractivas, optimizadas y funcionales.  
+                    Mi enfoque se centra en la <strong>creatividad, eficiencia y experiencia de usuario</strong>,  
+                    creando sitios web dinámicos y responsivos que se adaptan a las necesidades del cliente.  
+                </p>
+                <p>
+                    Explora mis proyectos y descubre cómo puedo ayudarte a dar vida a tu próxima gran idea.
+                </p>
+                <a href="#proyectos" class="btn">Ver mis proyectos</a>
+            </div>
+        </section>
+        
+        
+        <section id="noticias">
+            <h2>Últimas Noticias</h2>
+            <div id="contenedor-noticias"></div>
+        </section>
+        
+        <section id="proyectos">
+            <h2>Proyectos Destacados</h2>
+            <p>Algunos de mis trabajos más recientes.</p>
+            <div id="galeria-proyectos">
+                <div class="proyecto">
+                    <a href="https://www.engelvoelkers.com/es/es/vender/valoracion-de-la-propiedad?utm_source=bing&utm_medium=paidsearch&utm_campaign=hq_selleracquisition_madrid_bing&utm_content=301_p_agenciainmobiliaria&utm_term=inmobiliaria&msclkid=6442d38941e31922ed71b42265d06cd9" target="_blank">
+                        <img src="images/diseñoweb.jpeg" alt="Página Web para Empresa">
+                        <h3>Proyecto 1</h3>
+                        <p>Página Web para Empresa</p>
+                    </a>
+                </div>
+                <div class="proyecto">
+                    <a href="https://zadig-et-voltaire.com/eu/es/c/new-bags-636?msclkid=aa5ffa005d2b106f146d9dab79bc7a5e&utm_source=bing&utm_medium=cpc&utm_campaign=es_pmax_fall%20winter_2024_paid-sem&utm_term=zadig-et-voltaire.com&utm_content=MAROQUINERIE" target="_blank">
+                        <img src="images/ideasweb.jpeg" alt="Tienda en Línea">
+                        <h3>Proyecto 2</h3>
+                        <p>Tienda en Línea</p>
+                    </a>
+                </div>
+                <div class="proyecto">
+                    <a href="https://techcrunch.com/" target="_blank">
+                        <img src="images/imagen8.png" alt="Creación de Blogs">
+                        <h3>Proyecto 3</h3>
+                        <p>Creación de Blogs</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section id="testimonios">
+            <h2>Testimonios</h2>
+            <p>Lo que dicen mis clientes sobre mi trabajo.</p>
+            <div class="contenedor-testimonios">
+                <div class="testimonio">
+                    <p>"Excelente servicio y atención al detalle."</p>
+                    <h4>- Mike</h4>
+                </div>
+                <div class="testimonio">
+                    <p>"Muy profesional y cumplidor de plazos."</p>
+                    <h4>- Josep</h4>
+                </div>
+                <div class="testimonio">
+                    <p>"Superó todas mis expectativas, trabajo impecable."</p>
+                    <h4>- Ilai</h4>
+                </div>
+                <div class="testimonio">
+                    <p>"Recomiendo totalmente, calidad y responsabilidad garantizadas."</p>
+                    <h4>- Samuel</h4>
+                </div>
+                <div class="testimonio">
+                    <p>"Siempre disponible para resolver dudas, excelente comunicación."</p>
+                    <h4>- Toñi</h4>
+                </div>
+                <div class="testimonio">
+                    <p>"Trabajo de alta calidad y muy buen trato, sin duda volveré a contratar."</p>
+                    <h4>- Jesús</h4>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Puedes contactarme en el siguiente formulario o a través de mis redes sociales.</p>
+            <form>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+                <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required>
+                <input type="number" id="telefono" name="telefono" placeholder="Ingresa tu teléfono" pattern="[67][0-9]{8}" maxlength="9" required>
+                <input type="email" id="email" name="email" placeholder="Ingresa tu email" required>
+                <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí" required></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Mi Portfolio - Todos los derechos reservados.</p>
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/lorena.torresmartinez.5" target="_blank">
+                <img src="./images/facebooklogo.png" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/lorena_93tm/" target="_blank">
+                <img src="./images/instagramlogo.png" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com/in/lorena-torres-mart%C3%ADnez-24227b166/" target="_blank">
+                <img src="./images/linkedinlogo.png" alt="LinkedIn">
+            </a>
+        </div>
+    </footer>  
+</body>
+</html>

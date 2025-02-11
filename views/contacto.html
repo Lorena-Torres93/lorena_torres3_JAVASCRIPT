@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+   
+</head>
+<body>
+    <header>
+        <nav aria-label="Menú principal">
+            <div class="nav-container">
+                <div class="logo">
+                        <img src="../images/logolorenatorres.jpg" alt="Logo de la empresa">
+                   <h1>Mi Portfolio</h1>
+                </div>
+                <ul role="menu">
+                    <li role="menuitem"><a href="../index.html">Inicio</a></li>
+                    <li role="menuitem"><a href="galeria.html">Galería</a></li>
+                    <li role="menuitem"><a href="presupuesto.html">Presupuesto</a></li>
+                    <li role="menuitem"><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    
+    
+
+    <h1>Contacto</h1>
+    <p><strong>Dirección:</strong> Carrer Major, 19, Montaberner, Valencia</p>
+    <p><strong>Teléfono:</strong> +34 123 456 789</p>
+    <p><strong>Email:</strong> contacto@empresa.com</p>
+
+    <div id="map"></div>
+
+    <h2>Calcular Ruta</h2>
+    <label for="userLocation">Introduce tu ubicación:</label>
+    <input type="text" id="userLocation" placeholder="Ej: Madrid, España">
+    <button id="calculateRoute">Calcular Ruta</button>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script>
+        // Coordenadas de la empresa
+        const empresaCoords = [38.8663, -0.4774]; // Montaberner, Valencia
+
+        // Inicialización del mapa
+        const map = L.map('map').setView(empresaCoords, 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        L.marker(empresaCoords).addTo(map)
+            .bindPopup('Nuestra Empresa')
+            .openPopup();
+
+        document.getElementById('calculateRoute').addEventListener('click', function() {
+            const userLocation = document.getElementById('userLocation').value;
+            if (userLocation) {
+                fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(userLocation)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.length > 0) {
+                            const userCoords = [parseFloat(data[0].lat), parseFloat(data[0].lon)];
+
+                            L.marker(userCoords).addTo(map).bindPopup('Tu ubicación').openPopup();
+
+                            L.polyline([empresaCoords, userCoords], { color: 'blue' }).addTo(map);
+                            map.fitBounds([empresaCoords, userCoords]);
+
+                            // Abrir Google Maps para obtener indicaciones
+                            const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${userCoords[0]},${userCoords[1]}&destination=${empresaCoords[0]},${empresaCoords[1]}&travelmode=driving`;
+                            window.open(googleMapsUrl, '_blank');
+                        } else {
+                            alert('No se pudo encontrar la ubicación.');
+                        }
+                    });
+            } else {
+                alert('Por favor, introduce tu ubicación.');
+            }
+        });
+    </script>
+        <footer>
+            <p>&copy; 2025 Mi Portfolio - Todos los derechos reservados.</p>
+            <div class="redes-sociales">
+                <a href="https://www.facebook.com/lorena.torresmartinez.5" target="_blank">
+                    <img src="../images/facebooklogo.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/lorena_93tm/" target="_blank">
+                    <img src="../images/instagramlogo.png" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/in/lorena-torres-mart%C3%ADnez-24227b166/" target="_blank">
+                    <img src="../images/linkedinlogo.png" alt="LinkedIn">
+                </a>
+            </div>
+        </footer> 
+</body>
+</html>

@@ -1,0 +1,465 @@
+/* Ajustar diseño */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo {
+        text-align: center;
+    }
+}
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Estilos generales del header */
+header {
+    background: linear-gradient(135deg, #007bff, #6610f2);
+    padding: 15px 0;
+    color: white;
+    text-align: center;
+}
+
+/* Contenedor de navegación */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilos del logo y título */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    height: 50px; /* Ajusta el tamaño del logo */
+    max-width: 100%;
+    display: block;
+}
+
+.logo h1 {
+    font-size: 24px;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Estilos del menú de navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight:bold;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: white;
+    border-radius: 5px;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 10px;
+    }
+}
+
+
+/* Secciones */
+section {
+    padding: 50px;
+    text-align: center;
+    background: white;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+}
+
+h1, h2 {
+    color: #007bff;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+/*Logo*/
+.logo img {
+    height: 50px; /* Ajusta el tamaño según sea necesario */
+    max-width: 100%;
+    display: block;
+}
+
+/*Contenedor noticias*/
+#contenedor-noticias {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.noticia {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.noticia h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.noticia p {
+    margin-bottom: 0;
+    color: #666;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+form input, form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+form button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para checkboxes */
+label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    margin-right: 10px;
+    accent-color: #007bff;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.redes-sociales {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.redes-sociales a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.redes-sociales a:hover img {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+
+/* Estilo de la galería */
+.contenedor-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.imagen-galeria {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.imagen-galeria:hover {
+    transform: scale(1.05);
+}
+/*Modal*/
+#modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+#modal.show {
+    display: flex;
+}
+#imagen-ampliada {
+    max-width: 90%;
+    max-height: 90%;
+}
+.cerrar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Botones */
+#anterior, #siguiente {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+#anterior { left: 10px; }
+#siguiente { right: 10px; }
+
+.cerrar {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+/*Contacto*/
+#map {
+    height: 400px;
+    width: 100%;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+label, input {
+    display: block;
+    margin-bottom: 10px;
+}
+/*testimonios*/
+#testimonios {
+    background: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.contenedor-testimonios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.testimonio {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 280px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.testimonio:hover {
+    transform: translateY(-5px);
+}
+
+.testimonio p {
+    font-style: italic;
+    color: #555;
+}
+
+.testimonio h4 {
+    margin-top: 10px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .contenedor-testimonios {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+#proyectos {
+    text-align: center;
+    padding: 50px;
+    background: white;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+}
+
+#galeria-proyectos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.proyecto {
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 280px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.proyecto a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.proyecto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.proyecto h3 {
+    margin: 10px 0 5px;
+    color: #007bff;
+    font-size: 20px;
+}
+
+.proyecto p {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.proyecto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Estilos para la sección de bienvenida */
+#presentacion {
+    background: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.contenido-presentacion {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#presentacion h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+#presentacion p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Botón de llamada a la acción */
+.btn {
+    display: inline-block;
+    background: white;
+    color: #007bff;
+    font-weight: bold;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    
+}
+
+.btn:hover {
+    background: white;
+    color: rgb(47, 140, 240);
+}
+
